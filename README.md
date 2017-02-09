@@ -1,2 +1,27 @@
 # GoCompare_ShoppingCart_AngularJS
-Shopping cart web application using angularjs to calculate total basket price based on the user selection.
+
+REQUIREMENT
+
+In a normal supermarket, things are identified using Stock Keeping Units, or SKUs. In our store, we’ll use individual letters of the alphabet (A, B, C, and so on). Our goods are priced individually. In addition, some items are multipriced: buy n of them, and they’ll cost you y pounds. For example, item ‘A’ might cost 50 pounds individually, but this week we have a special offer: buy three ‘A’s and they’ll cost you 130. The price and offer table:
+
+Item Price Offer
+
+A 50 3 for 130 B 30 2 for 45 C 20 D 15
+
+Our checkout accepts items in any order, so that if we scan a B, an A, and another B, we’ll recognize the two B’s and price them at 45 (for a total price so far of 95).
+
+Developed shopping cart checkout web application to calculate total basket price based on the user selection.
+
+Total Time: 30 Minutes
+
+Cart.html
+
+HTML page to display the items, price and offer details for user selection. Included angularJS and bootstrap to html page for design and calculate the price.
+
+cartController.js
+
+Javascript file cart controller contains logic to calculate item total price and total price.
+
+OUTPUT:
+
+a) Users will be presented with list of items, price and offer details. b) User can change the items from dropdown c) Total price will be updated.
