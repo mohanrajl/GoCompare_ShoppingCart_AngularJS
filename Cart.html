@@ -1,0 +1,54 @@
+<html>
+<head> 
+  <title>GoCompare</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/cartController.js"></script>
+</head>
+<body ng-app="cartApp">
+
+<div class="container" ng-controller="cartCtrl">
+	<h2>GoCompare - Supermarket checkout coding exercise</h2>
+    <table class="table table-striped" style="table-layout:fixed;"> 
+        <tr>
+            
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Price</th>
+			<th>Offer details</th>
+            <th>Total</th>
+        </tr>
+        <tr ng-repeat="item in cart.items">
+            <td>{{ item.description }}</td>       
+			<td>
+				<select ng-model="item.quantity" ng-change="calculateItemTotalPrice(item)" class="input-mini">
+				  <option ng-selected="true" value="0">0</option>
+				  <option value="1">1</option>
+				  <option value="2">2</option>
+				  <option value="3">3</option>
+				  <option value="4">4</option>
+				  <option value="5">5</option>
+				  <option value="6">6</option>
+				  <option value="7">7</option>
+				  <option value="8">8</option>
+				  <option value="9">9</option>
+				  <option value="10">10</option>
+				</select>
+			</td>
+			<td> {{ item.price | currency : "£"}}</td>
+			<td><span ng-show="item.offerAvailable">{{ item.offerDetails.offerItems }} FOR {{ item.offerDetails.offerPrice | currency : "£" }}</span></td>
+            <td>{{ item.totalPrice | currency : "£" }}</td>
+        </tr>
+        <tr>
+			<td></td>
+            <td></td>
+			<td></td>            
+            <td>Total Price:</td>
+            <td>{{ calculateTotalPrice() | currency : "£" }}</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
